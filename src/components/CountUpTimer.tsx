@@ -107,19 +107,22 @@ const CountUpTimer: React.FC = () => {
   if (!now) return null;
 
   const diff = now.getTime() - departureDate.getTime();
-  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-  const minutes = Math.floor((diff / (1000 * 60)) % 60);
-  const seconds = Math.floor((diff / 1000) % 60);
+  const absDiff = Math.abs(diff);
+  const days = Math.floor(absDiff / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((absDiff / (1000 * 60 * 60)) % 24);
+  const minutes = Math.floor((absDiff / (1000 * 60)) % 60);
+  const seconds = Math.floor((absDiff / 1000) % 60);
 
   return (
     <Section>
-      <Heading>⏰ Time Since Dave Abandoned Us ⏰</Heading>
+      <Heading>
+        {diff > 0 ? "⏰ Time Since Dave Abandoned Us ⏰" : "⏰ Countdown to Dave Abandoning Us ⏰"}
+      </Heading>
       <SubText>(not that we're counting or anything...)</SubText>
 
       <TimerRow>
         <Unit>
-          <Number>{Math.abs(days)}</Number>
+          <Number>{days}</Number>
           <Label>days</Label>
         </Unit>
         <Separator>:</Separator>
