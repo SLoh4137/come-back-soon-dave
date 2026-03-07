@@ -30,7 +30,7 @@ const IndexPage: React.FC<PageProps> = () => {
       <HeroSection />
 
       <MarqueeText
-        text="💔 WE WILL MISS YOU 💔 COME BACK 💔"
+        text="💔 WE WILL MISS YOU 💔 COME BACK 💔 WE WILL MISS YOU 💔 COME BACK 💔 WE WILL MISS YOU 💔 COME BACK 💔"
         speed={12}
         bgColor="#1a0a3e"
         textColor="#ff69b4"
@@ -44,7 +44,7 @@ const IndexPage: React.FC<PageProps> = () => {
       <MemoriesGallery />
 
       <MarqueeText
-        text="⚠️ AMBER ALERT: MISSING FRIEND — DAVID HSU, LAST SEEN IN SF, APPROXIMATELY 1 DAVE TALL, RESPONDS TO 'DAVE', 'DAVID', AND 'HEY YOU' ⚠️"
+        text="⚠️ AMBER ALERT: MISSING FRIEND — DAVID HSU, LAST SEEN IN SF, APPROXIMATELY 1 DAVE TALL, RESPONDS TO 'DAVE', 'DAVID', AND 'LIL BRO' ⚠️"
         speed={25}
         bgColor="#ff6b00"
         textColor="#fff"
