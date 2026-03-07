@@ -1,5 +1,5 @@
 import * as React from "react";
-import styled, { css, keyframes } from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 const rainbowBg = keyframes`
   0% { background-position: 0% 50%; }
@@ -44,7 +44,7 @@ const SubText = styled.p`
   font-size: clamp(0.9rem, 2vw, 1.1rem);
 `;
 
-const BigButton = styled.button<{ $shaking: boolean }>`
+const BigButton = styled.button`
   padding: 20px 50px;
   font-size: clamp(1.2rem, 3vw, 1.8rem);
   font-family: "Comic Sans MS", "Comic Sans", cursive;
@@ -53,11 +53,6 @@ const BigButton = styled.button<{ $shaking: boolean }>`
   background: linear-gradient(135deg, #e74c3c, #8e44ad, #3498db);
   background-size: 200% 200%;
   animation: ${rainbowBg} 3s ease infinite;
-  ${({ $shaking }) =>
-    $shaking &&
-    css`
-      animation: ${rainbowBg} 3s ease infinite, ${shake} 0.5s ease-in-out;
-    `}
   border: 3px solid #fff;
   border-radius: 50px;
   cursor: pointer;
@@ -68,6 +63,10 @@ const BigButton = styled.button<{ $shaking: boolean }>`
 
   &:hover {
     transform: scale(1.1);
+  }
+
+  &.shaking {
+    animation: ${rainbowBg} 3s ease infinite, ${shake} 0.5s ease-in-out;
   }
 `;
 
@@ -121,16 +120,26 @@ const pleas = [
 const BeggingButton: React.FC = () => {
   const [clickCount, setClickCount] = React.useState(0);
   const [currentPlea, setCurrentPlea] = React.useState("");
-  const [isShaking, setIsShaking] = React.useState(false);
   const [buttonPos, setButtonPos] = React.useState({ x: 0, y: 0 });
   const [dodging, setDodging] = React.useState(false);
+  const buttonRef = React.useRef<HTMLButtonElement>(null);
 
   const handleBeg = () => {
     const newCount = clickCount + 1;
     setClickCount(newCount);
     setCurrentPlea(pleas[newCount % pleas.length]);
-    setIsShaking(true);
-    setTimeout(() => setIsShaking(false), 500);
+    // Trigger shake via DOM to avoid styled-components re-render
+    const el = buttonRef.current;
+    if (el) {
+      el.style.animation = "none";
+      // Force reflow
+      void el.offsetWidth;
+      el.style.animation = "";
+      el.classList.remove("shaking");
+      void el.offsetWidth;
+      el.classList.add("shaking");
+      setTimeout(() => el.classList.remove("shaking"), 500);
+    }
   };
 
   const handleDontClick = (e: React.MouseEvent) => {
@@ -147,7 +156,7 @@ const BeggingButton: React.FC = () => {
       <Heading>🙏 The Official Begging Station 🙏</Heading>
       <SubText>Click the button to send a heartfelt plea into the void</SubText>
 
-      <BigButton type="button" onClick={handleBeg} $shaking={isShaking}>
+      <BigButton type="button" onClick={handleBeg} ref={buttonRef}>
         🥺 BEG DAVE TO COME BACK 🥺
       </BigButton>
 
