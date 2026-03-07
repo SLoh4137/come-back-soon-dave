@@ -54,19 +54,18 @@ const SubText = styled.p`
 const TimerRow = styled.div`
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
-  gap: 10px;
+  align-items: flex-start;
+  gap: clamp(2px, 1.5vw, 10px);
 `;
 
 const Unit = styled.div`
   display: inline-flex;
   flex-direction: column;
   align-items: center;
-  margin: 0 10px;
 `;
 
 const Number = styled.span`
-  font-size: clamp(2.5rem, 8vw, 5rem);
+  font-size: clamp(1.8rem, 6vw, 5rem);
   font-weight: 900;
   font-family: monospace;
   background: linear-gradient(180deg, #ff6b6b, #ee5a24);
@@ -76,14 +75,13 @@ const Number = styled.span`
 `;
 
 const Separator = styled(Number)`
-  align-self: flex-start;
   animation: ${blink} 1s step-end infinite;
 `;
 
 const Label = styled.span`
-  font-size: clamp(0.7rem, 2vw, 1rem);
+  font-size: clamp(0.55rem, 1.5vw, 1rem);
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: clamp(0px, 0.3vw, 2px);
   color: #aaa;
   margin-top: 5px;
 `;
