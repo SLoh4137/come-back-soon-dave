@@ -65,6 +65,61 @@ const LoveNote = styled.p`
   animation: ${glow} 2s ease-in-out infinite;
 `;
 
+const rainbowBg = keyframes`
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+`;
+
+const shake = keyframes`
+  0%, 100% { transform: translateX(0) rotate(0deg); }
+  10% { transform: translateX(-8px) rotate(-3deg); }
+  20% { transform: translateX(8px) rotate(3deg); }
+  30% { transform: translateX(-6px) rotate(-2deg); }
+  40% { transform: translateX(6px) rotate(2deg); }
+  50% { transform: translateX(-4px) rotate(-1deg); }
+  60% { transform: translateX(4px) rotate(1deg); }
+  70% { transform: translateX(-2px) rotate(0deg); }
+  80% { transform: translateX(2px) rotate(0deg); }
+`;
+
+const SlidesButton = styled.a`
+  display: inline-block;
+  margin-top: 40px;
+  padding: 20px 48px;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+  border: 3px solid #fff;
+  border-radius: 16px;
+  background: linear-gradient(
+    270deg,
+    #ff0000,
+    #ff7f00,
+    #ffff00,
+    #00ff00,
+    #00bfff,
+    #8b00ff,
+    #ff0000
+  );
+  background-size: 400% 400%;
+  animation: ${rainbowBg} 3s ease infinite;
+  cursor: pointer;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 20px rgba(255, 100, 255, 0.4),
+    0 0 60px rgba(255, 100, 255, 0.2);
+  transition: transform 0.2s, box-shadow 0.2s;
+
+  &:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 40px rgba(255, 100, 255, 0.6),
+      0 0 80px rgba(255, 100, 255, 0.3);
+    animation: ${rainbowBg} 3s ease infinite, ${shake} 0.5s ease-in-out infinite;
+  }
+`;
+
 const Footer = styled.footer`
   margin-top: 80px;
   padding-top: 20px;
@@ -86,6 +141,13 @@ const FinalPlea: React.FC = () => {
         and you'll come back to SF soon.
       </Message>
       <LoveNote>With love from all your friends in SF ❤️</LoveNote>
+      <SlidesButton
+        href="https://comebacksoondavebaylife.com/slides"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        🎬 See Everyone Else's Slides For You 🎬
+      </SlidesButton>
       <Footer>
         <p style={{ marginTop: "15px", fontSize: "2rem" }}>
           🌉 → ✈️ → 🏠 → 🔙 → 🌉
