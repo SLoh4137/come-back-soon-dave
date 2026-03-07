@@ -28,6 +28,13 @@ const config: GatsbyConfig = {
         // Add any options here
       },
     },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [`Comic Neue`],
+        display: "swap",
+      },
+    },
   ],
 };
 

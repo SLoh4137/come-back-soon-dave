@@ -68,8 +68,5 @@ export const Head: HeadFC = () => (
       name="description"
       content="An extremely emotional and totally professional farewell page for David Hsu leaving SF"
     />
-    <style>{`
-      @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap');
-    `}</style>
   </>
 );

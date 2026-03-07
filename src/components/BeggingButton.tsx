@@ -89,7 +89,7 @@ const DodgeArea = styled.div`
   position: relative;
 `;
 
-const DodgeButton = styled.button<{ $x: number; $y: number }>`
+const DodgeButton = styled.button<{ $x: number; $y: number; $scale: number }>`
   padding: 12px 30px;
   font-size: 1rem;
   font-family: "Comic Sans MS", "Comic Sans", cursive;
@@ -98,9 +98,15 @@ const DodgeButton = styled.button<{ $x: number; $y: number }>`
   border: 1px solid #555;
   border-radius: 8px;
   cursor: pointer;
-  transition: transform 0.15s ease-out;
-  transform: translate(${({ $x }) => $x}px, ${({ $y }) => $y}px);
+  transition: transform 0.15s ease-out, opacity 0.3s ease;
+  transform: translate(${({ $x }) => $x}px, ${({ $y }) => $y}px)
+    scale(${({ $scale }) => $scale});
+  opacity: ${({ $scale }) => $scale};
   position: relative;
+
+  @media (pointer: coarse) {
+    transform: scale(${({ $scale }) => $scale});
+  }
 `;
 
 const pleas = [
@@ -115,12 +121,29 @@ const pleas = [
   "ERROR 404: DAVE NOT FOUND 😵",
 ];
 
+const mobileRefusals = [
+  "Nice try! 😏",
+  "Nope, not happening! 🙅",
+  "We said NO! 😤",
+  "Stop trying to give up on Dave!! 😡",
+  "The button is SHRINKING because your hope is DYING 💀",
+  "Almost gone... just like Dave... 😢",
+  "...",
+];
+
 const BeggingButton: React.FC = () => {
   const [clickCount, setClickCount] = React.useState(0);
   const [currentPlea, setCurrentPlea] = React.useState("");
   const [buttonPos, setButtonPos] = React.useState({ x: 0, y: 0 });
   const [dodging, setDodging] = React.useState(false);
+  const [shrinkTaps, setShrinkTaps] = React.useState(0);
+  const [refusalMsg, setRefusalMsg] = React.useState("");
+  const [isTouchDevice, setIsTouchDevice] = React.useState(false);
   const buttonRef = React.useRef<HTMLButtonElement>(null);
+
+  React.useEffect(() => {
+    setIsTouchDevice(window.matchMedia("(pointer: coarse)").matches);
+  }, []);
 
   const handleBeg = () => {
     const newCount = clickCount + 1;
@@ -140,7 +163,7 @@ const BeggingButton: React.FC = () => {
     }
   };
 
-  const handleDontClick = (e: React.MouseEvent) => {
+  const handleDodgeDesktop = (e: React.MouseEvent) => {
     e.preventDefault();
     setButtonPos({
       x: (Math.random() - 0.5) * 200,
@@ -148,6 +171,21 @@ const BeggingButton: React.FC = () => {
     });
     setDodging(true);
   };
+
+  const handleDodgeMobile = () => {
+    const newTaps = shrinkTaps + 1;
+    setShrinkTaps(newTaps);
+    setDodging(true);
+    if (newTaps < mobileRefusals.length) {
+      setRefusalMsg(mobileRefusals[newTaps - 1]);
+    } else {
+      setRefusalMsg("FINE. But Dave will always be in our hearts. 💔");
+    }
+  };
+
+  const dodgeScale = isTouchDevice ? Math.max(0, 1 - shrinkTaps * 0.15) : 1;
+
+  const vanished = dodgeScale <= 0;
 
   return (
     <Section>
@@ -175,18 +213,48 @@ const BeggingButton: React.FC = () => {
         <p style={{ color: "#666", marginBottom: "20px", fontSize: "0.9rem" }}>
           Or if you've given up hope...
         </p>
-        <DodgeButton
-          type="button"
-          onMouseEnter={handleDontClick}
-          onClick={() =>
-            alert("HOW DID YOU CLICK THIS?! There is still hope!! 🎉")
-          }
-          $x={buttonPos.x}
-          $y={buttonPos.y}
-        >
-          Accept that Dave is gone forever 😞
-        </DodgeButton>
-        {dodging && (
+        {!vanished ? (
+          <DodgeButton
+            type="button"
+            onMouseEnter={!isTouchDevice ? handleDodgeDesktop : undefined}
+            onClick={
+              isTouchDevice
+                ? handleDodgeMobile
+                : () =>
+                    alert("HOW DID YOU CLICK THIS?! There is still hope!! 🎉")
+            }
+            $x={buttonPos.x}
+            $y={buttonPos.y}
+            $scale={dodgeScale}
+          >
+            Accept that Dave is gone forever 😞
+          </DodgeButton>
+        ) : (
+          <p
+            style={{
+              color: "#feca57",
+              fontFamily: '"Comic Sans MS", "Comic Sans", cursive',
+              fontSize: "1.1rem",
+            }}
+          >
+            The button is gone. Just like Dave. 🪦
+          </p>
+        )}
+        {dodging && refusalMsg && (
+          <p
+            key={shrinkTaps}
+            style={{
+              color: "#ff6b6b",
+              marginTop: "20px",
+              fontStyle: "italic",
+              fontSize: "0.9rem",
+              animation: "fadeIn 0.3s ease",
+            }}
+          >
+            {refusalMsg}
+          </p>
+        )}
+        {dodging && !isTouchDevice && (
           <p
             style={{
               color: "#ff6b6b",
