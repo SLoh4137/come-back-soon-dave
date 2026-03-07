@@ -22,6 +22,12 @@ const config: GatsbyConfig = {
       __key: "images",
     },
     "gatsby-adapter-netlify",
+    {
+      resolve: `gatsby-plugin-styled-components`,
+      options: {
+        // Add any options here
+      },
+    },
   ],
 };
 

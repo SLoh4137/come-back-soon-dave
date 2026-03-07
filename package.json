@@ -16,14 +16,17 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "babel-plugin-styled-components": "^2.1.4",
     "gatsby": "^5.14.6",
     "gatsby-adapter-netlify": "^1.4.0",
     "gatsby-plugin-image": "^3.16.0",
     "gatsby-plugin-sharp": "^5.16.0",
+    "gatsby-plugin-styled-components": "^6.16.0",
     "gatsby-source-filesystem": "^5.16.0",
     "gatsby-transformer-sharp": "^5.16.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "styled-components": "^6.3.11"
   },
   "devDependencies": {
     "@types/node": "^20.11.19",
