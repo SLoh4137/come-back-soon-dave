@@ -112,30 +112,45 @@ const Explosions: React.FC = () => {
   const idRef = React.useRef(0);
 
   React.useEffect(() => {
+    const timers = new Set<ReturnType<typeof setTimeout>>();
+
+    const track = (fn: () => void, delay: number) => {
+      const id = setTimeout(() => {
+        timers.delete(id);
+        fn();
+      }, delay);
+      timers.add(id);
+      return id;
+    };
+
     const spawnRandom = () => {
       const x = Math.random() * window.innerWidth;
       const y = Math.random() * window.innerHeight;
       const id = idRef.current++;
       setExplosions((prev) => [...prev, createExplosion(x, y, id)]);
-      setTimeout(() => {
+      track(() => {
         setExplosions((prev) => prev.filter((e) => e.id !== id));
       }, 1500);
     };
 
     const scheduleNext = () => {
       const delay = 1 + Math.random() * 1500;
-      return setTimeout(() => {
+      track(() => {
         spawnRandom();
-        timerRef = scheduleNext();
+        scheduleNext();
       }, delay);
     };
 
-    let timerRef = setTimeout(() => {
+    track(() => {
       spawnRandom();
-      timerRef = scheduleNext();
+      scheduleNext();
     }, 1000);
 
-    return () => clearTimeout(timerRef);
+    return () => {
+      timers.forEach(clearTimeout);
+      timers.clear();
+      setExplosions([]);
+    };
   }, []);
 
   return (
