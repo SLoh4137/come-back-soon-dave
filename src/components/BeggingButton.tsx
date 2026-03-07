@@ -1,5 +1,5 @@
 import * as React from "react"
-import styled, { keyframes } from "styled-components"
+import styled, { css, keyframes } from "styled-components"
 
 const rainbowBg = keyframes`
   0% { background-position: 0% 50%; }
@@ -52,7 +52,12 @@ const BigButton = styled.button<{ $shaking: boolean }>`
   color: #fff;
   background: linear-gradient(135deg, #e74c3c, #8e44ad, #3498db);
   background-size: 200% 200%;
-  animation: ${rainbowBg} 3s ease infinite${({ $shaking }) => ($shaking ? `, ${shake} 0.5s ease-in-out` : "")};
+  animation: ${rainbowBg} 3s ease infinite;
+  ${({ $shaking }) =>
+    $shaking &&
+    css`
+      animation: ${rainbowBg} 3s ease infinite, ${shake} 0.5s ease-in-out;
+    `}
   border: 3px solid #fff;
   border-radius: 50px;
   cursor: pointer;
@@ -141,7 +146,7 @@ const BeggingButton: React.FC = () => {
       <Heading>🙏 The Official Begging Station 🙏</Heading>
       <SubText>Click the button to send a heartfelt plea into the void</SubText>
 
-      <BigButton onClick={handleBeg} $shaking={isShaking}>
+      <BigButton type="button" onClick={handleBeg} $shaking={isShaking}>
         🥺 BEG DAVE TO COME BACK 🥺
       </BigButton>
 
@@ -160,6 +165,7 @@ const BeggingButton: React.FC = () => {
           Or if you've given up hope...
         </p>
         <DodgeButton
+          type="button"
           onMouseEnter={handleDontClick}
           onClick={() => alert("HOW DID YOU CLICK THIS?! There is still hope!! 🎉")}
           $x={buttonPos.x}
