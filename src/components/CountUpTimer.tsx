@@ -116,7 +116,9 @@ const CountUpTimer: React.FC = () => {
   return (
     <Section>
       <Heading>
-        {diff > 0 ? "⏰ Time Since Dave Abandoned Us ⏰" : "⏰ Countdown to Dave Abandoning Us ⏰"}
+        {diff > 0
+          ? "⏰ Time Since Dave Abandoned Us ⏰"
+          : "⏰ Countdown to Dave Abandoning Us ⏰"}
       </Heading>
       <SubText>(not that we're counting or anything...)</SubText>
 

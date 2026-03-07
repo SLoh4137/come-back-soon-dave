@@ -1,16 +1,16 @@
-import * as React from "react"
-import type { HeadFC, PageProps } from "gatsby"
-import FloatingEmojis from "../components/FloatingEmojis"
-import MarqueeText from "../components/MarqueeText"
-import HeroSection from "../components/HeroSection"
-import CountUpTimer from "../components/CountUpTimer"
-import SadGoldenGate from "../components/SadGoldenGate"
-import FarewellMessages from "../components/FarewellMessages"
-import BeggingButton from "../components/BeggingButton"
-import MemorialWall from "../components/MemorialWall"
-import FinalPlea from "../components/FinalPlea"
-import FakeMusicPlayer from "../components/FakeMusicPlayer"
-import GlobalStyles from "../components/GlobalStyles"
+import * as React from "react";
+import type { HeadFC, PageProps } from "gatsby";
+import FloatingEmojis from "../components/FloatingEmojis";
+import MarqueeText from "../components/MarqueeText";
+import HeroSection from "../components/HeroSection";
+import CountUpTimer from "../components/CountUpTimer";
+import SadGoldenGate from "../components/SadGoldenGate";
+import FarewellMessages from "../components/FarewellMessages";
+import BeggingButton from "../components/BeggingButton";
+import MemorialWall from "../components/MemorialWall";
+import FinalPlea from "../components/FinalPlea";
+import FakeMusicPlayer from "../components/FakeMusicPlayer";
+import GlobalStyles from "../components/GlobalStyles";
 
 const IndexPage: React.FC<PageProps> = () => {
   return (
@@ -50,17 +50,20 @@ const IndexPage: React.FC<PageProps> = () => {
       <MemorialWall />
       <FinalPlea />
     </>
-  )
-}
+  );
+};
 
-export default IndexPage
+export default IndexPage;
 
 export const Head: HeadFC = () => (
   <>
     <title>Come Back Soon, Dave! 😭🌉</title>
-    <meta name="description" content="An extremely emotional and totally professional farewell page for David Hsu leaving SF" />
+    <meta
+      name="description"
+      content="An extremely emotional and totally professional farewell page for David Hsu leaving SF"
+    />
     <style>{`
       @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap');
     `}</style>
   </>
-)
+);

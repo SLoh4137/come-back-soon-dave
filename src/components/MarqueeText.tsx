@@ -1,12 +1,16 @@
-import * as React from "react"
-import styled, { keyframes } from "styled-components"
+import * as React from "react";
+import styled, { keyframes } from "styled-components";
 
 const marquee = keyframes`
   0% { transform: translateX(100%); }
   100% { transform: translateX(-100%); }
-`
+`;
 
-const Banner = styled.div<{ $bgColor: string; $textColor: string; $fontSize: string }>`
+const Banner = styled.div<{
+  $bgColor: string;
+  $textColor: string;
+  $fontSize: string;
+}>`
   overflow: hidden;
   white-space: nowrap;
   background: ${({ $bgColor }) => $bgColor};
@@ -19,20 +23,20 @@ const Banner = styled.div<{ $bgColor: string; $textColor: string; $fontSize: str
   border-bottom: 3px dashed #ffff00;
   position: relative;
   z-index: 2;
-`
+`;
 
 const ScrollingText = styled.span<{ $speed: number }>`
   display: inline-block;
   animation: ${marquee} ${({ $speed }) => $speed}s linear infinite;
   padding-left: 100%;
-`
+`;
 
 interface MarqueeTextProps {
-  text: string
-  speed?: number
-  bgColor?: string
-  textColor?: string
-  fontSize?: string
+  text: string;
+  speed?: number;
+  bgColor?: string;
+  textColor?: string;
+  fontSize?: string;
 }
 
 const MarqueeText: React.FC<MarqueeTextProps> = ({
@@ -46,7 +50,7 @@ const MarqueeText: React.FC<MarqueeTextProps> = ({
     <Banner $bgColor={bgColor} $textColor={textColor} $fontSize={fontSize}>
       <ScrollingText $speed={speed}>{text}</ScrollingText>
     </Banner>
-  )
-}
+  );
+};
 
-export default MarqueeText
+export default MarqueeText;

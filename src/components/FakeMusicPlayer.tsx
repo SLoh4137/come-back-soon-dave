@@ -1,15 +1,15 @@
-import * as React from "react"
-import styled, { keyframes } from "styled-components"
+import * as React from "react";
+import styled, { keyframes } from "styled-components";
 
 const spin = keyframes`
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
-`
+`;
 
 const slideInRight = keyframes`
   from { transform: translateX(100%); opacity: 0; }
   to { transform: translateX(0); opacity: 1; }
-`
+`;
 
 const Container = styled.div`
   position: fixed;
@@ -23,23 +23,24 @@ const Container = styled.div`
   backdrop-filter: blur(10px);
   max-width: 280px;
   animation: ${slideInRight} 1s 2s both;
-`
+`;
 
 const Row = styled.div`
   display: flex;
   align-items: center;
   gap: 12px;
-`
+`;
 
 const Disc = styled.div<{ $spinning: boolean }>`
   font-size: 2rem;
-  animation: ${({ $spinning }) => ($spinning ? spin : "none")} 3s linear infinite;
-`
+  animation: ${({ $spinning }) => ($spinning ? spin : "none")} 3s linear
+    infinite;
+`;
 
 const Info = styled.div`
   flex: 1;
   min-width: 0;
-`
+`;
 
 const NowPlaying = styled.p`
   font-size: 0.75rem;
@@ -47,7 +48,7 @@ const NowPlaying = styled.p`
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-bottom: 2px;
-`
+`;
 
 const TrackName = styled.p`
   font-size: 0.9rem;
@@ -56,12 +57,12 @@ const TrackName = styled.p`
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-`
+`;
 
 const Artist = styled.p`
   font-size: 0.75rem;
   color: #aaa;
-`
+`;
 
 const PlayButton = styled.button`
   background: none;
@@ -69,7 +70,7 @@ const PlayButton = styled.button`
   font-size: 1.5rem;
   cursor: pointer;
   padding: 4px;
-`
+`;
 
 const ProgressBar = styled.div`
   margin-top: 8px;
@@ -77,17 +78,17 @@ const ProgressBar = styled.div`
   background: rgba(255, 255, 255, 0.1);
   border-radius: 2px;
   overflow: hidden;
-`
+`;
 
 const Progress = styled.div`
   width: 35%;
   height: 100%;
   background: linear-gradient(90deg, #1db954, #1ed760);
   border-radius: 2px;
-`
+`;
 
 const FakeMusicPlayer: React.FC = () => {
-  const [isPlaying, setIsPlaying] = React.useState(true)
+  const [isPlaying, setIsPlaying] = React.useState(true);
 
   return (
     <Container>
@@ -106,7 +107,7 @@ const FakeMusicPlayer: React.FC = () => {
         <Progress />
       </ProgressBar>
     </Container>
-  )
-}
+  );
+};
 
-export default FakeMusicPlayer
+export default FakeMusicPlayer;
