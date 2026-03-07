@@ -30,7 +30,7 @@ const IndexPage: React.FC<PageProps> = () => {
       <HeroSection />
 
       <MarqueeText
-        text="💔 COME BACK DAVE 💔 WE MISS YOU 💔 COME BACK DAVE 💔 WE MISS YOU 💔 COME BACK DAVE 💔 WE MISS YOU 💔 COME BACK DAVE 💔"
+        text="💔 WE WILL MISS YOU 💔 COME BACK 💔"
         speed={12}
         bgColor="#1a0a3e"
         textColor="#ff69b4"

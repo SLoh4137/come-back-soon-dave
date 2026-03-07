@@ -2,8 +2,8 @@ import * as React from "react";
 import styled, { keyframes } from "styled-components";
 
 const marquee = keyframes`
-  0% { transform: translateX(100%); }
-  100% { transform: translateX(-100%); }
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 `;
 
 const Banner = styled.div<{
@@ -25,10 +25,14 @@ const Banner = styled.div<{
   z-index: 2;
 `;
 
-const ScrollingText = styled.span<{ $speed: number }>`
+const ScrollingTrack = styled.div<{ $speed: number }>`
   display: inline-block;
   animation: ${marquee} ${({ $speed }) => $speed}s linear infinite;
-  padding-left: 100%;
+  white-space: nowrap;
+`;
+
+const TextSegment = styled.span`
+  padding: 0 2rem;
 `;
 
 interface MarqueeTextProps {
@@ -41,14 +45,19 @@ interface MarqueeTextProps {
 
 const MarqueeText: React.FC<MarqueeTextProps> = ({
   text,
-  speed = 15,
+  speed = 8,
   bgColor = "#ff0000",
   textColor = "#ffff00",
   fontSize = "1.5rem",
 }) => {
   return (
     <Banner $bgColor={bgColor} $textColor={textColor} $fontSize={fontSize}>
-      <ScrollingText $speed={speed}>{text}</ScrollingText>
+      <ScrollingTrack $speed={speed}>
+        <TextSegment>{text}</TextSegment>
+        <TextSegment>{text}</TextSegment>
+        <TextSegment>{text}</TextSegment>
+        <TextSegment>{text}</TextSegment>
+      </ScrollingTrack>
     </Banner>
   );
 };

@@ -79,17 +79,14 @@ const FinalPlea: React.FC = () => {
       <Heading>Come Back Soon, Dave</Heading>
       <HeartEmoji>🫶</HeartEmoji>
       <Message>
-        In all seriousness, Dave — you're an incredible friend and SF won't be
-        the same without you. We're counting down the days until you're back.
-        Until then, know that you're missed more than words (or this extremely
-        professional website) can express.
+        From August 2022 to March 2026, we've made so many memories together
+        here in the Bay. Whether it's LYF, random bike rides, or getting high
+        scores at Round One, you've left your mark on all of us. No one can ever
+        replace the Dave energy. Here's to hoping Maryland will be a nice reset,
+        and you'll come back to SF soon.
       </Message>
-      <LoveNote>With love from your SF crew ❤️</LoveNote>
+      <LoveNote>With love from all your friends in SF ❤️</LoveNote>
       <Footer>
-        <p>Made with 😭 and questionable CSS choices</p>
-        <p style={{ marginTop: "8px" }}>
-          This website is 100% Comic Sans and we're not sorry
-        </p>
         <p style={{ marginTop: "15px", fontSize: "2rem" }}>
           🌉 → ✈️ → 🏠 → 🔙 → 🌉
         </p>
