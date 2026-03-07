@@ -11,12 +11,14 @@ import MemorialWall from "../components/MemorialWall";
 import FinalPlea from "../components/FinalPlea";
 import FakeMusicPlayer from "../components/FakeMusicPlayer";
 import GlobalStyles from "../components/GlobalStyles";
+import Explosions from "../components/Explosions";
 
 const IndexPage: React.FC<PageProps> = () => {
   return (
     <>
       <GlobalStyles />
       <FloatingEmojis />
+      <Explosions />
       <FakeMusicPlayer />
 
       <MarqueeText
@@ -58,6 +60,8 @@ export default IndexPage;
 export const Head: HeadFC = () => (
   <>
     <title>Come Back Soon, Dave! 😭🌉</title>
+    <link rel="icon" href="/favicon.ico" sizes="16x16" type="image/x-icon" />
+    <link rel="shortcut icon" href="/favicon.ico" />
     <meta
       name="description"
       content="An extremely emotional and totally professional farewell page for David Hsu leaving SF"
