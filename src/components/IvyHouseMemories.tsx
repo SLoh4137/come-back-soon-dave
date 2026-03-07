@@ -57,8 +57,7 @@ const PhotoFrame = styled.div`
   border-radius: 12px;
   overflow: hidden;
   border: 3px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 0 20px rgba(123, 104, 238, 0.3),
-    0 8px 32px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 20px rgba(123, 104, 238, 0.3), 0 8px 32px rgba(0, 0, 0, 0.4);
   transition: transform 0.3s, box-shadow 0.3s;
   background: #111;
 
@@ -90,9 +89,11 @@ const CaptionDetail = styled.p`
 const IvyHouseMemories: React.FC = () => {
   return (
     <Section>
-      <Heading>🏠 The Ivy House Era 🏠</Heading>
+      <Heading>🏠 Moving to Ivy 🏠</Heading>
       <SubHeading>
-        When we first moved into Ivy house and life was beautiful
+        A chance encounter <br />
+        The best possible townhouse <br />
+        Now with two roommates
       </SubHeading>
 
       <PhotoGrid>
@@ -109,8 +110,7 @@ const IvyHouseMemories: React.FC = () => {
           </PhotoFrame>
           <Caption>First Day at Ivy 🔑</Caption>
           <CaptionDetail>
-            Fresh-faced and ready to make memories. And then unmake them by
-            leaving.
+            Got our keys, dinner at Domo, and dessert at Naya 😎
           </CaptionDetail>
         </PhotoCard>
 
@@ -127,8 +127,7 @@ const IvyHouseMemories: React.FC = () => {
           </PhotoFrame>
           <Caption>Dave at Ivy 🏡</Caption>
           <CaptionDetail>
-            The house still echoes with the sound of Dave not being there
-            anymore.
+            These are the only two photos I have of that day
           </CaptionDetail>
         </PhotoCard>
       </PhotoGrid>

@@ -63,7 +63,8 @@ const PhotoFrame = styled.div`
 
   &:hover {
     transform: scale(1.03) rotate(-1deg);
-    box-shadow: 0 0 40px rgba(255, 105, 180, 0.5), 0 12px 40px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 40px rgba(255, 105, 180, 0.5),
+      0 12px 40px rgba(0, 0, 0, 0.5);
   }
 
   .gatsby-image-wrapper {
@@ -88,10 +89,12 @@ const CaptionDetail = styled.p`
 const PhotoMemories: React.FC = () => {
   return (
     <Section>
-      <Heading>📸 Remember When Dave First Arrived? 📸</Heading>
+      <Heading>📸 Dave's First Days in the Bay 📸</Heading>
       <SubHeading>
-        Back when he was young, full of hope, and hadn't yet betrayed us by
-        leaving
+        Living on Page Street
+        <br />
+        Angela as his roommate
+        <br />A lifetime ago
       </SubHeading>
 
       <PhotoGrid>
@@ -107,9 +110,7 @@ const PhotoMemories: React.FC = () => {
             />
           </PhotoFrame>
           <Caption>Dave Moving to SF 🚚</Caption>
-          <CaptionDetail>
-            Look at that face. No idea he'd eventually break our hearts.
-          </CaptionDetail>
+          <CaptionDetail>We thought this was a pretty cool view</CaptionDetail>
         </PhotoCard>
 
         <PhotoCard $delay={1}>
@@ -124,9 +125,7 @@ const PhotoMemories: React.FC = () => {
             />
           </PhotoFrame>
           <Caption>Dave's First Day in SF 🌉</Caption>
-          <CaptionDetail>
-            The city welcomed him with open arms. And this is how he repays us.
-          </CaptionDetail>
+          <CaptionDetail>With Albert at Hickory!</CaptionDetail>
         </PhotoCard>
       </PhotoGrid>
     </Section>

@@ -80,80 +80,199 @@ const PhotoFrame = styled.div<{ $index: number }>`
 const MemoriesGallery: React.FC = () => {
   return (
     <Section>
-      <Heading>🎞️ The Dave Hsu Archives 🎞️</Heading>
+      <Heading>🎞️ Random Memories 🎞️</Heading>
       <SubHeading>
-        Photographic evidence that Dave did, in fact, exist here among us
+        Many memories
+        <br />
+        Think of all the fun we had
+        <br />
+        More when you come back
       </SubHeading>
 
       <Masonry>
         <PhotoFrame $index={0}>
-          <StaticImage src="../images/memories/dave-activate.png" alt="Dave memory" placeholder="blurred" layout="fullWidth" />
+          <StaticImage
+            src="../images/memories/dave-activate.png"
+            alt="Dave memory"
+            placeholder="blurred"
+            layout="fullWidth"
+          />
         </PhotoFrame>
         <PhotoFrame $index={1}>
-          <StaticImage src="../images/memories/dave-aileen-showcase.jpg" alt="Dave memory" placeholder="blurred" layout="fullWidth" />
+          <StaticImage
+            src="../images/memories/dave-aileen-showcase.jpg"
+            alt="Dave memory"
+            placeholder="blurred"
+            layout="fullWidth"
+          />
         </PhotoFrame>
         <PhotoFrame $index={2}>
-          <StaticImage src="../images/memories/dave-bike-ride.jpg" alt="Dave memory" placeholder="blurred" layout="fullWidth" />
+          <StaticImage
+            src="../images/memories/dave-bike-ride.jpg"
+            alt="Dave memory"
+            placeholder="blurred"
+            layout="fullWidth"
+          />
         </PhotoFrame>
         <PhotoFrame $index={3}>
-          <StaticImage src="../images/memories/dave-dye-hair.jpg" alt="Dave memory" placeholder="blurred" layout="fullWidth" />
+          <StaticImage
+            src="../images/memories/dave-dye-hair.jpg"
+            alt="Dave memory"
+            placeholder="blurred"
+            layout="fullWidth"
+          />
         </PhotoFrame>
         <PhotoFrame $index={4}>
-          <StaticImage src="../images/memories/dave-foster-city-kayaking.jpg" alt="Dave memory" placeholder="blurred" layout="fullWidth" />
+          <StaticImage
+            src="../images/memories/dave-foster-city-kayaking.jpg"
+            alt="Dave memory"
+            placeholder="blurred"
+            layout="fullWidth"
+          />
         </PhotoFrame>
         <PhotoFrame $index={5}>
-          <StaticImage src="../images/memories/dave-iris-bday.jpg" alt="Dave memory" placeholder="blurred" layout="fullWidth" />
+          <StaticImage
+            src="../images/memories/dave-iris-bday.jpg"
+            alt="Dave memory"
+            placeholder="blurred"
+            layout="fullWidth"
+          />
         </PhotoFrame>
         <PhotoFrame $index={6}>
-          <StaticImage src="../images/memories/dave-ivy-rooftop.jpeg" alt="Dave memory" placeholder="blurred" layout="fullWidth" />
+          <StaticImage
+            src="../images/memories/dave-ivy-rooftop.jpeg"
+            alt="Dave memory"
+            placeholder="blurred"
+            layout="fullWidth"
+          />
         </PhotoFrame>
         <PhotoFrame $index={7}>
-          <StaticImage src="../images/memories/dave-lucid-motors.jpg" alt="Dave memory" placeholder="blurred" layout="fullWidth" />
+          <StaticImage
+            src="../images/memories/dave-lucid-motors.jpg"
+            alt="Dave memory"
+            placeholder="blurred"
+            layout="fullWidth"
+          />
         </PhotoFrame>
         <PhotoFrame $index={8}>
-          <StaticImage src="../images/memories/dave-lyf-group-d.JPG" alt="Dave memory" placeholder="blurred" layout="fullWidth" />
+          <StaticImage
+            src="../images/memories/dave-lyf-group-d.JPG"
+            alt="Dave memory"
+            placeholder="blurred"
+            layout="fullWidth"
+          />
         </PhotoFrame>
         <PhotoFrame $index={9}>
-          <StaticImage src="../images/memories/dave-lyf-pizza.jpg" alt="Dave memory" placeholder="blurred" layout="fullWidth" />
+          <StaticImage
+            src="../images/memories/dave-lyf-pizza.jpg"
+            alt="Dave memory"
+            placeholder="blurred"
+            layout="fullWidth"
+          />
         </PhotoFrame>
         <PhotoFrame $index={10}>
-          <StaticImage src="../images/memories/dave-lyf-stuffed-animals.jpg" alt="Dave memory" placeholder="blurred" layout="fullWidth" />
+          <StaticImage
+            src="../images/memories/dave-lyf-stuffed-animals.jpg"
+            alt="Dave memory"
+            placeholder="blurred"
+            layout="fullWidth"
+          />
         </PhotoFrame>
         <PhotoFrame $index={11}>
-          <StaticImage src="../images/memories/dave-men-dinner.jpg" alt="Dave memory" placeholder="blurred" layout="fullWidth" />
+          <StaticImage
+            src="../images/memories/dave-men-dinner.jpg"
+            alt="Dave memory"
+            placeholder="blurred"
+            layout="fullWidth"
+          />
         </PhotoFrame>
         <PhotoFrame $index={12}>
-          <StaticImage src="../images/memories/dave-meta-sf-office.jpg" alt="Dave memory" placeholder="blurred" layout="fullWidth" />
+          <StaticImage
+            src="../images/memories/dave-meta-sf-office.jpg"
+            alt="Dave memory"
+            placeholder="blurred"
+            layout="fullWidth"
+          />
         </PhotoFrame>
         <PhotoFrame $index={13}>
-          <StaticImage src="../images/memories/dave-museum-face.jpg" alt="Dave memory" placeholder="blurred" layout="fullWidth" />
+          <StaticImage
+            src="../images/memories/dave-museum-face.jpg"
+            alt="Dave memory"
+            placeholder="blurred"
+            layout="fullWidth"
+          />
         </PhotoFrame>
         <PhotoFrame $index={14}>
-          <StaticImage src="../images/memories/dave-pizza-gary-bday.jpg" alt="Dave memory" placeholder="blurred" layout="fullWidth" />
+          <StaticImage
+            src="../images/memories/dave-pizza-gary-bday.jpg"
+            alt="Dave memory"
+            placeholder="blurred"
+            layout="fullWidth"
+          />
         </PhotoFrame>
         <PhotoFrame $index={15}>
-          <StaticImage src="../images/memories/dave-renaissance-fair.jpg" alt="Dave memory" placeholder="blurred" layout="fullWidth" />
+          <StaticImage
+            src="../images/memories/dave-renaissance-fair.jpg"
+            alt="Dave memory"
+            placeholder="blurred"
+            layout="fullWidth"
+          />
         </PhotoFrame>
         <PhotoFrame $index={16}>
-          <StaticImage src="../images/memories/dave-room-napping.jpg" alt="Dave memory" placeholder="blurred" layout="fullWidth" />
+          <StaticImage
+            src="../images/memories/dave-room-napping.jpg"
+            alt="Dave memory"
+            placeholder="blurred"
+            layout="fullWidth"
+          />
         </PhotoFrame>
         <PhotoFrame $index={17}>
-          <StaticImage src="../images/memories/dave-round-one-high-score.jpg" alt="Dave memory" placeholder="blurred" layout="fullWidth" />
+          <StaticImage
+            src="../images/memories/dave-round-one-high-score.jpg"
+            alt="Dave memory"
+            placeholder="blurred"
+            layout="fullWidth"
+          />
         </PhotoFrame>
         <PhotoFrame $index={18}>
-          <StaticImage src="../images/memories/dave-round-one-octopus-hands.jpg" alt="Dave memory" placeholder="blurred" layout="fullWidth" />
+          <StaticImage
+            src="../images/memories/dave-round-one-octopus-hands.jpg"
+            alt="Dave memory"
+            placeholder="blurred"
+            layout="fullWidth"
+          />
         </PhotoFrame>
         <PhotoFrame $index={19}>
-          <StaticImage src="../images/memories/dave-sea-urchin.jpg" alt="Dave memory" placeholder="blurred" layout="fullWidth" />
+          <StaticImage
+            src="../images/memories/dave-sea-urchin.jpg"
+            alt="Dave memory"
+            placeholder="blurred"
+            layout="fullWidth"
+          />
         </PhotoFrame>
         <PhotoFrame $index={20}>
-          <StaticImage src="../images/memories/dave-the-kitchen.jpg" alt="Dave memory" placeholder="blurred" layout="fullWidth" />
+          <StaticImage
+            src="../images/memories/dave-the-kitchen.jpg"
+            alt="Dave memory"
+            placeholder="blurred"
+            layout="fullWidth"
+          />
         </PhotoFrame>
         <PhotoFrame $index={21}>
-          <StaticImage src="../images/memories/dave-volo-volleyball.jpg" alt="Dave memory" placeholder="blurred" layout="fullWidth" />
+          <StaticImage
+            src="../images/memories/dave-volo-volleyball.jpg"
+            alt="Dave memory"
+            placeholder="blurred"
+            layout="fullWidth"
+          />
         </PhotoFrame>
         <PhotoFrame $index={22}>
-          <StaticImage src="../images/memories/dave-white-rabbit.jpg" alt="Dave memory" placeholder="blurred" layout="fullWidth" />
+          <StaticImage
+            src="../images/memories/dave-white-rabbit.jpg"
+            alt="Dave memory"
+            placeholder="blurred"
+            layout="fullWidth"
+          />
         </PhotoFrame>
       </Masonry>
     </Section>

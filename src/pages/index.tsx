@@ -40,10 +40,10 @@ const IndexPage: React.FC<PageProps> = () => {
       />
 
       <CountUpTimer />
+      <SadGoldenGate />
       <PhotoMemories />
       <IvyHouseMemories />
       <MemoriesGallery />
-      <SadGoldenGate />
 
       <MarqueeText
         text="⚠️ AMBER ALERT: MISSING FRIEND — DAVID HSU, LAST SEEN IN SF, APPROXIMATELY 1 DAVE TALL, RESPONDS TO 'DAVE', 'DAVID', AND 'HEY YOU' ⚠️"
