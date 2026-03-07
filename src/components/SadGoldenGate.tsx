@@ -24,7 +24,7 @@ const Section = styled.section`
 `;
 
 const Heading = styled.h2`
-  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  font-family: "Comic Sans MS", "Comic Sans", "Comic Neue", cursive;
   font-size: clamp(1.5rem, 4vw, 2.5rem);
   margin-bottom: 30px;
   color: #ff6b6b;

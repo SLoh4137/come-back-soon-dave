@@ -22,7 +22,7 @@ const Section = styled.section`
 
 const Heading = styled.h2`
   text-align: center;
-  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  font-family: "Comic Sans MS", "Comic Sans", "Comic Neue", cursive;
   font-size: clamp(1.5rem, 4vw, 2.5rem);
   margin-bottom: 10px;
   background: linear-gradient(90deg, #00ffcc, #7b68ee, #00ffcc);
@@ -74,7 +74,7 @@ const PhotoFrame = styled.div`
 
 const Caption = styled.p`
   margin-top: 16px;
-  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  font-family: "Comic Sans MS", "Comic Sans", "Comic Neue", cursive;
   font-size: clamp(0.9rem, 2vw, 1.1rem);
   color: #ddd;
 `;

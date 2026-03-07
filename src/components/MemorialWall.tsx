@@ -20,7 +20,7 @@ const Section = styled.section`
 
 const Heading = styled.h2`
   text-align: center;
-  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  font-family: "Comic Sans MS", "Comic Sans", "Comic Neue", cursive;
   font-size: clamp(1.5rem, 4vw, 2.5rem);
   margin-bottom: 15px;
 `;
@@ -66,7 +66,7 @@ const Emoji = styled.span`
 `;
 
 const Title = styled.h3`
-  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  font-family: "Comic Sans MS", "Comic Sans", "Comic Neue", cursive;
   font-size: 1.1rem;
   color: #feca57;
   margin-bottom: 8px;

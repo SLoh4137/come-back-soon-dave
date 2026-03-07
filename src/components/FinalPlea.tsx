@@ -38,7 +38,7 @@ const Section = styled.section`
 `;
 
 const Heading = styled.h2`
-  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  font-family: "Comic Sans MS", "Comic Sans", "Comic Neue", cursive;
   font-size: clamp(2rem, 6vw, 4rem);
   margin-bottom: 30px;
   animation: ${pulse} 2s ease-in-out infinite;
@@ -60,7 +60,7 @@ const Message = styled.p`
 
 const LoveNote = styled.p`
   font-size: clamp(1.2rem, 3vw, 1.8rem);
-  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  font-family: "Comic Sans MS", "Comic Sans", "Comic Neue", cursive;
   color: #ff69b4;
   animation: ${glow} 2s ease-in-out infinite;
 `;
@@ -87,7 +87,7 @@ const SlidesButton = styled.a`
   display: inline-block;
   margin-top: 40px;
   padding: 20px 48px;
-  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  font-family: "Comic Sans MS", "Comic Sans", "Comic Neue", cursive;
   font-size: clamp(1.2rem, 3vw, 1.8rem);
   font-weight: bold;
   color: #fff;

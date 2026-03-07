@@ -51,7 +51,7 @@ const Section = styled.section`
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 20px;
+  padding: 80px 20px;
   background: linear-gradient(
     135deg,
     #0a0a2e 0%,
@@ -66,14 +66,13 @@ const Section = styled.section`
 `;
 
 const DiscoBall = styled.div`
-  position: absolute;
-  top: 20px;
   font-size: 4rem;
   animation: ${spin} 4s linear infinite;
+  margin-bottom: 20px;
 `;
 
 const Title = styled.h1`
-  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  font-family: "Comic Sans MS", "Comic Sans", "Comic Neue", cursive;
   font-size: clamp(2.5rem, 8vw, 6rem);
   animation: ${glow} 2s ease-in-out infinite, ${shake} 5s ease-in-out infinite;
   margin-bottom: 20px;
@@ -103,7 +102,7 @@ const RainbowName = styled.span`
 
 const Subtitle = styled.p`
   font-size: clamp(1.2rem, 3vw, 2rem);
-  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  font-family: "Comic Sans MS", "Comic Sans", "Comic Neue", cursive;
   animation: ${float} 3s ease-in-out infinite;
   color: #ff69b4;
   margin-bottom: 30px;
@@ -133,10 +132,9 @@ const PhotoWrapper = styled.div`
 `;
 
 const ScrollIndicator = styled.div`
-  position: absolute;
-  bottom: 30px;
   font-size: 2rem;
   animation: ${float} 2s ease-in-out infinite;
+  margin-top: 30px;
 `;
 
 const HeroSection: React.FC = () => {

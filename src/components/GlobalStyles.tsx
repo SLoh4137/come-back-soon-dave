@@ -13,6 +13,7 @@ const GlobalStyles = createGlobalStyle`
     overflow-x: hidden;
     background: #0a0a2e;
     color: #fff;
+    font-family: "Comic Sans MS", "Comic Sans", "Comic Neue", cursive;
   }
 `;
 

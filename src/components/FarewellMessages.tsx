@@ -24,7 +24,7 @@ const Section = styled.section`
 
 const Heading = styled.h2`
   text-align: center;
-  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  font-family: "Comic Sans MS", "Comic Sans", "Comic Neue", cursive;
   font-size: clamp(1.5rem, 4vw, 2.5rem);
   margin-bottom: 50px;
   animation: ${neonFlicker} 1.5s infinite alternate;
@@ -63,7 +63,7 @@ const Quote = styled.p`
   font-size: clamp(0.9rem, 2vw, 1.1rem);
   line-height: 1.5;
   color: #ddd;
-  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  font-family: "Comic Sans MS", "Comic Sans", "Comic Neue", cursive;
 `;
 
 const Attribution = styled.p`

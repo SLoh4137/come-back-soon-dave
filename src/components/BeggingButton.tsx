@@ -32,7 +32,7 @@ const Section = styled.section`
 `;
 
 const Heading = styled.h2`
-  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  font-family: "Comic Sans MS", "Comic Sans", "Comic Neue", cursive;
   font-size: clamp(1.5rem, 4vw, 2.5rem);
   margin-bottom: 20px;
   color: #feca57;
@@ -47,7 +47,7 @@ const SubText = styled.p`
 const BigButton = styled.button`
   padding: 20px 50px;
   font-size: clamp(1.2rem, 3vw, 1.8rem);
-  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  font-family: "Comic Sans MS", "Comic Sans", "Comic Neue", cursive;
   font-weight: bold;
   color: #fff;
   background: linear-gradient(135deg, #e74c3c, #8e44ad, #3498db);
@@ -77,7 +77,7 @@ const Count = styled.p`
 
 const PleaText = styled.p`
   font-size: clamp(1.2rem, 3vw, 2rem);
-  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  font-family: "Comic Sans MS", "Comic Sans", "Comic Neue", cursive;
   color: #feca57;
   animation: ${bounceIn} 0.5s ease;
   margin-top: 15px;
@@ -92,7 +92,7 @@ const DodgeArea = styled.div`
 const DodgeButton = styled.button<{ $x: number; $y: number; $scale: number }>`
   padding: 12px 30px;
   font-size: 1rem;
-  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  font-family: "Comic Sans MS", "Comic Sans", "Comic Neue", cursive;
   background: #333;
   color: #888;
   border: 1px solid #555;
@@ -233,7 +233,7 @@ const BeggingButton: React.FC = () => {
           <p
             style={{
               color: "#feca57",
-              fontFamily: '"Comic Sans MS", "Comic Sans", cursive',
+              fontFamily: '"Comic Sans MS", "Comic Sans", "Comic Neue", cursive',
               fontSize: "1.1rem",
             }}
           >

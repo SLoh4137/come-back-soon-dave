@@ -15,7 +15,7 @@ const Banner = styled.div<{
   white-space: nowrap;
   background: ${({ $bgColor }) => $bgColor};
   padding: 12px 0;
-  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  font-family: "Comic Sans MS", "Comic Sans", "Comic Neue", cursive;
   font-size: ${({ $fontSize }) => $fontSize};
   font-weight: bold;
   color: ${({ $textColor }) => $textColor};
