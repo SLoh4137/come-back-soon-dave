@@ -12,6 +12,9 @@ import FinalPlea from "../components/FinalPlea";
 import FakeMusicPlayer from "../components/FakeMusicPlayer";
 import GlobalStyles from "../components/GlobalStyles";
 import Explosions from "../components/Explosions";
+import PhotoMemories from "../components/PhotoMemories";
+import IvyHouseMemories from "../components/IvyHouseMemories";
+import MemoriesGallery from "../components/MemoriesGallery";
 
 const IndexPage: React.FC<PageProps> = () => {
   return (
@@ -37,8 +40,10 @@ const IndexPage: React.FC<PageProps> = () => {
       />
 
       <CountUpTimer />
+      <PhotoMemories />
+      <IvyHouseMemories />
+      <MemoriesGallery />
       <SadGoldenGate />
-      <FarewellMessages />
 
       <MarqueeText
         text="⚠️ AMBER ALERT: MISSING FRIEND — DAVID HSU, LAST SEEN IN SF, APPROXIMATELY 1 DAVE TALL, RESPONDS TO 'DAVE', 'DAVID', AND 'HEY YOU' ⚠️"
@@ -49,7 +54,6 @@ const IndexPage: React.FC<PageProps> = () => {
       />
 
       <BeggingButton />
-      <MemorialWall />
       <FinalPlea />
     </>
   );

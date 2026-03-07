@@ -1,5 +1,6 @@
 import * as React from "react";
 import styled, { keyframes } from "styled-components";
+import { StaticImage } from "gatsby-plugin-image";
 
 const spin = keyframes`
   from { transform: rotate(0deg); }
@@ -116,6 +117,21 @@ const DramaticText = styled.div`
   font-style: italic;
 `;
 
+const PhotoWrapper = styled.div`
+  margin: 30px 0;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 4px solid #ff69b4;
+  box-shadow: 0 0 30px rgba(255, 105, 180, 0.4),
+    0 0 60px rgba(142, 68, 173, 0.3);
+  animation: ${float} 4s ease-in-out infinite;
+  max-width: min(80vw, 400px);
+
+  .gatsby-image-wrapper {
+    display: block;
+  }
+`;
+
 const ScrollIndicator = styled.div`
   position: absolute;
   bottom: 30px;
@@ -135,6 +151,17 @@ const HeroSection: React.FC = () => {
       </Title>
 
       <Subtitle>SF will never be the same without you 😭</Subtitle>
+
+      <PhotoWrapper>
+        <StaticImage
+          src="../images/dave-unicorn-party-hats.jpg"
+          alt="Dave in unicorn party hats"
+          placeholder="blurred"
+          layout="constrained"
+          width={400}
+          quality={100}
+        />
+      </PhotoWrapper>
 
       <DramaticText>
         <p>End of an era</p>
