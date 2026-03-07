@@ -138,7 +138,7 @@ const FinalPlea: React.FC = () => {
         here in the Bay. Whether it's LYF, random bike rides, or getting high
         scores at Round One, you've left your mark on all of us. No one can ever
         replace the Dave energy. Here's to hoping Maryland will be a nice reset,
-        and you'll come back to SF soon.
+        and you'll come back to SF soon!
       </Message>
       <LoveNote>With love from all your friends in SF ❤️</LoveNote>
       <SlidesButton
@@ -146,7 +146,7 @@ const FinalPlea: React.FC = () => {
         target="_blank"
         rel="noopener noreferrer"
       >
-        🎬 See Everyone Else's Slides For You 🎬
+        🎬 See More SF Memories 🎬
       </SlidesButton>
       <Footer>
         <p style={{ marginTop: "15px", fontSize: "2rem" }}>

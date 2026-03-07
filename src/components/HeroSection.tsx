@@ -150,12 +150,12 @@ const HeroSection: React.FC = () => {
         <RainbowName>DAVE</RainbowName>
       </Title>
 
-      <Subtitle>SF will never be the same without you 😭</Subtitle>
+      <Subtitle>You better come back soon</Subtitle>
 
       <PhotoWrapper>
         <StaticImage
           src="../images/dave-unicorn-party-hats.jpg"
-          alt="Dave in unicorn party hats"
+          alt="Dave in party hats"
           placeholder="blurred"
           layout="constrained"
           width={400}
