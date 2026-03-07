@@ -107,14 +107,12 @@ const pleas = [
   "PLEASE COME BACK DAVE 😭",
   "WE'LL DO ANYTHING!!!",
   "SF ISN'T THE SAME WITHOUT YOU!!!",
-  "I'M LITERALLY BEGGING RN 🧎",
   "DAVE PLS 🥺👉👈",
   "WHAT DO WE HAVE TO DO???",
   "NAME YOUR PRICE DAVE",
   "OUR HEARTS ARE BROKEN 💔",
   "COME BAAAAAAACK",
   "ERROR 404: DAVE NOT FOUND 😵",
-  "WE MISS YOUR FACE 🫠",
 ];
 
 const BeggingButton: React.FC = () => {

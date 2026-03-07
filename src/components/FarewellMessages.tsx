@@ -38,18 +38,18 @@ const Grid = styled.div`
   margin: 0 auto;
 `;
 
-const Card = styled.div<{ $color: string; $index: number }>`
+const Card = styled.div`
   background: rgba(255, 255, 255, 0.05);
   border-radius: 16px;
   padding: 24px;
-  border: 2px solid ${({ $color }) => $color}33;
-  animation: ${popIn} 0.5s ${({ $index }) => $index * 0.1}s both;
+  border: 2px solid var(--card-color-border);
+  animation: ${popIn} 0.5s both;
   transition: transform 0.3s, box-shadow 0.3s;
   cursor: default;
 
   &:hover {
     transform: scale(1.05) rotate(2deg);
-    box-shadow: 0 0 30px ${({ $color }) => $color}44;
+    box-shadow: 0 0 30px var(--card-color-glow);
   }
 `;
 
@@ -66,54 +66,22 @@ const Quote = styled.p`
   font-family: "Comic Sans MS", "Comic Sans", cursive;
 `;
 
-const Attribution = styled.p<{ $color: string }>`
+const Attribution = styled.p`
   margin-top: 12px;
   font-size: 0.85rem;
-  color: ${({ $color }) => $color};
+  color: var(--card-color);
   font-style: italic;
 `;
 
 const messages = [
-  {
-    text: "Remember when Dave said he'd 'be right back'? That was months ago.",
-    emoji: "🤡",
-    color: "#ff6b6b",
-  },
-  {
-    text: "Dave's apartment in SF is now a memorial site. We leave flowers weekly.",
-    emoji: "💐",
-    color: "#feca57",
-  },
-  {
-    text: "The group chat hasn't been the same. We just send sad reacts now.",
-    emoji: "😔",
-    color: "#48dbfb",
-  },
-  {
-    text: "Local restaurants have reported a 47% decrease in revenue since Dave left.",
-    emoji: "📉",
-    color: "#ff9ff3",
-  },
-  {
-    text: "Dave didn't just leave SF. He left a Dave-shaped hole in our hearts.",
-    emoji: "💔",
-    color: "#f368e0",
-  },
-  {
-    text: "Rumor has it the fog in SF is actually the collective tears of Dave's friends.",
-    emoji: "🌫️",
-    color: "#c8d6e5",
-  },
-  {
-    text: "Dave said he was going to get milk. That was the last we saw of him.",
-    emoji: "🥛",
-    color: "#00d2d3",
-  },
-  {
-    text: "SF's vibe without Dave is like a burrito without guac. Technically fine, but why even bother?",
-    emoji: "🌯",
-    color: "#ff9f43",
-  },
+  { text: "Remember when Dave said he'd 'be right back'? That was months ago.", emoji: "🤡", color: "#ff6b6b" },
+  { text: "Dave's apartment in SF is now a memorial site. We leave flowers weekly.", emoji: "💐", color: "#feca57" },
+  { text: "The group chat hasn't been the same. We just send sad reacts now.", emoji: "😔", color: "#48dbfb" },
+  { text: "Local restaurants have reported a 47% decrease in revenue since Dave left.", emoji: "📉", color: "#ff9ff3" },
+  { text: "Dave didn't just leave SF. He left a Dave-shaped hole in our hearts.", emoji: "💔", color: "#f368e0" },
+  { text: "Rumor has it the fog in SF is actually the collective tears of Dave's friends.", emoji: "🌫️", color: "#c8d6e5" },
+  { text: "Dave said he was going to get milk. That was the last we saw of him.", emoji: "🥛", color: "#00d2d3" },
+  { text: "SF's vibe without Dave is like a burrito without guac. Technically fine, but why even bother?", emoji: "🌯", color: "#ff9f43" },
 ];
 
 const FarewellMessages: React.FC = () => {
@@ -122,12 +90,18 @@ const FarewellMessages: React.FC = () => {
       <Heading>📜 Testimonials from Heartbroken Friends 📜</Heading>
       <Grid>
         {messages.map((msg, i) => (
-          <Card key={i} $color={msg.color} $index={i}>
+          <Card
+            key={i}
+            style={{
+              "--card-color": msg.color,
+              "--card-color-border": `${msg.color}33`,
+              "--card-color-glow": `${msg.color}44`,
+              animationDelay: `${i * 0.1}s`,
+            } as React.CSSProperties}
+          >
             <Emoji>{msg.emoji}</Emoji>
             <Quote>"{msg.text}"</Quote>
-            <Attribution $color={msg.color}>
-              — Anonymous SF Resident
-            </Attribution>
+            <Attribution>— Anonymous SF Resident</Attribution>
           </Card>
         ))}
       </Grid>

@@ -63,7 +63,12 @@ const PhotoFrame = styled.div`
   transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
   background: #111;
   margin-bottom: 16px;
-  animation: ${popIn} 0.5s both;
+  opacity: 0;
+  transform: scale(0) rotate(-10deg);
+
+  .visible & {
+    animation: ${popIn} 0.5s both;
+  }
 
   &:hover {
     transform: scale(1.05);
@@ -78,8 +83,28 @@ const PhotoFrame = styled.div`
 `;
 
 const MemoriesGallery: React.FC = () => {
+  const sectionRef = React.useRef<HTMLElement>(null);
+
+  React.useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          el.classList.add("visible");
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <Section>
+    <Section ref={sectionRef}>
       <Heading>🎞️ Random Memories 🎞️</Heading>
       <SubHeading>
         Many memories

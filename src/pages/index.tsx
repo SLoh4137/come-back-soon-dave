@@ -9,7 +9,6 @@ import FarewellMessages from "../components/FarewellMessages";
 import BeggingButton from "../components/BeggingButton";
 import MemorialWall from "../components/MemorialWall";
 import FinalPlea from "../components/FinalPlea";
-import FakeMusicPlayer from "../components/FakeMusicPlayer";
 import GlobalStyles from "../components/GlobalStyles";
 import Explosions from "../components/Explosions";
 import PhotoMemories from "../components/PhotoMemories";
@@ -22,7 +21,6 @@ const IndexPage: React.FC<PageProps> = () => {
       <GlobalStyles />
       <FloatingEmojis />
       <Explosions />
-      <FakeMusicPlayer />
 
       <MarqueeText
         text="🚨 BREAKING NEWS: DAVID HSU IS LEAVING THE BAY. THIS IS NOT A DRILL. 🚨 REPEAT: DAVE IS LEAVING. 🚨 PLEASE SEND HELP. 🚨"

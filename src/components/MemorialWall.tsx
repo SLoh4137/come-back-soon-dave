@@ -41,13 +41,21 @@ const Grid = styled.div`
   margin: 0 auto;
 `;
 
-const Card = styled.div<{ $index: number }>`
+const CardLeft = styled.div`
   background: rgba(255, 255, 255, 0.03);
   border-radius: 12px;
   padding: 24px;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  animation: ${({ $index }) => ($index % 2 === 0 ? slideInLeft : slideInRight)}
-    0.6s ${({ $index }) => $index * 0.15}s both;
+  animation: ${slideInLeft} 0.6s both;
+  text-align: center;
+`;
+
+const CardRight = styled.div`
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  padding: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  animation: ${slideInRight} 0.6s both;
   text-align: center;
 `;
 
@@ -71,54 +79,30 @@ const Content = styled.p`
 `;
 
 const memories = [
-  {
-    title: "Dave's Last Words",
-    content: '"I\'ll be back before you know it" — Dave, a known liar',
-    emoji: "🤥",
-  },
-  {
-    title: "Dave's Favorite Spot",
-    content: "Every restaurant in SF, simultaneously",
-    emoji: "🍽️",
-  },
-  {
-    title: "Fun Dave Fact #1",
-    content: "Dave's departure caused a 0.3 magnitude earthquake in SF",
-    emoji: "🌍",
-  },
-  {
-    title: "Fun Dave Fact #2",
-    content: "Local seagulls have been spotted wearing tiny black armbands",
-    emoji: "🐦",
-  },
-  {
-    title: "Dave's Legacy",
-    content:
-      "A slightly warmer barstool and a lot of empty group chat messages",
-    emoji: "🪑",
-  },
-  {
-    title: "Official Mourning Period",
-    content: "Until Dave comes back (so basically forever)",
-    emoji: "⏳",
-  },
+  { title: "Dave's Last Words", content: '"I\'ll be back before you know it" — Dave, a known liar', emoji: "🤥" },
+  { title: "Dave's Favorite Spot", content: "Every restaurant in SF, simultaneously", emoji: "🍽️" },
+  { title: "Fun Dave Fact #1", content: "Dave's departure caused a 0.3 magnitude earthquake in SF", emoji: "🌍" },
+  { title: "Fun Dave Fact #2", content: "Local seagulls have been spotted wearing tiny black armbands", emoji: "🐦" },
+  { title: "Dave's Legacy", content: "A slightly warmer barstool and a lot of empty group chat messages", emoji: "🪑" },
+  { title: "Official Mourning Period", content: "Until Dave comes back (so basically forever)", emoji: "⏳" },
 ];
 
 const MemorialWall: React.FC = () => {
   return (
     <Section>
       <Heading>🪦 The Dave Hsu Memorial Wall 🪦</Heading>
-      <SubHeading>
-        (He's not dead, he just left SF. Which is honestly worse.)
-      </SubHeading>
+      <SubHeading>(He's not dead, he just left SF. Which is honestly worse.)</SubHeading>
       <Grid>
-        {memories.map((memory, i) => (
-          <Card key={i} $index={i}>
-            <Emoji>{memory.emoji}</Emoji>
-            <Title>{memory.title}</Title>
-            <Content>{memory.content}</Content>
-          </Card>
-        ))}
+        {memories.map((memory, i) => {
+          const Card = i % 2 === 0 ? CardLeft : CardRight;
+          return (
+            <Card key={i} style={{ animationDelay: `${i * 0.15}s` }}>
+              <Emoji>{memory.emoji}</Emoji>
+              <Title>{memory.title}</Title>
+              <Content>{memory.content}</Content>
+            </Card>
+          );
+        })}
       </Grid>
     </Section>
   );

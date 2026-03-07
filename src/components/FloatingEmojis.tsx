@@ -17,35 +17,15 @@ const Container = styled.div`
   overflow: hidden;
 `;
 
-const Emoji = styled.span<{
-  $left: string;
-  $delay: string;
-  $duration: string;
-  $size: string;
-}>`
+const Emoji = styled.span`
   position: absolute;
-  left: ${({ $left }) => $left};
   bottom: -50px;
-  font-size: ${({ $size }) => $size};
-  animation: ${floatUp} ${({ $duration }) => $duration}
-    ${({ $delay }) => $delay} linear infinite;
   user-select: none;
+  animation: ${floatUp} var(--dur) var(--delay) linear infinite;
 `;
 
 const EMOJIS = [
-  "😭",
-  "👋",
-  "🌉",
-  "💔",
-  "🥺",
-  "✈️",
-  "🧳",
-  "😢",
-  "🫡",
-  "🪦",
-  "💀",
-  "🤡",
-  "🫠",
+  "😭", "👋", "🌉", "💔", "🥺", "✈️", "🧳", "😢", "🫡", "🪦", "💀", "🤡", "🫠",
 ];
 
 const FloatingEmojis: React.FC = () => {
@@ -65,10 +45,12 @@ const FloatingEmojis: React.FC = () => {
       {emojis.map(({ id, emoji, left, delay, duration, fontSize }) => (
         <Emoji
           key={id}
-          $left={left}
-          $delay={delay}
-          $duration={duration}
-          $size={fontSize}
+          style={{
+            left,
+            fontSize,
+            "--dur": duration,
+            "--delay": delay,
+          } as React.CSSProperties}
         >
           {emoji}
         </Emoji>
