@@ -54,7 +54,7 @@ const Masonry = styled.div`
   }
 `;
 
-const PhotoFrame = styled.div<{ $index: number }>`
+const PhotoFrame = styled.div`
   break-inside: avoid;
   border-radius: 10px;
   overflow: hidden;
@@ -63,7 +63,7 @@ const PhotoFrame = styled.div<{ $index: number }>`
   transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
   background: #111;
   margin-bottom: 16px;
-  animation: ${popIn} 0.5s ${({ $index }) => $index * 0.05}s both;
+  animation: ${popIn} 0.5s both;
 
   &:hover {
     transform: scale(1.05);
@@ -90,7 +90,7 @@ const MemoriesGallery: React.FC = () => {
       </SubHeading>
 
       <Masonry>
-        <PhotoFrame $index={0}>
+        <PhotoFrame style={{ animationDelay: "0s" }}>
           <StaticImage
             src="../images/memories/dave-activate.png"
             alt="Dave memory"
@@ -98,7 +98,7 @@ const MemoriesGallery: React.FC = () => {
             layout="fullWidth"
           />
         </PhotoFrame>
-        <PhotoFrame $index={1}>
+        <PhotoFrame style={{ animationDelay: "0.05s" }}>
           <StaticImage
             src="../images/memories/dave-aileen-showcase.jpg"
             alt="Dave memory"
@@ -106,7 +106,7 @@ const MemoriesGallery: React.FC = () => {
             layout="fullWidth"
           />
         </PhotoFrame>
-        <PhotoFrame $index={2}>
+        <PhotoFrame style={{ animationDelay: "0.1s" }}>
           <StaticImage
             src="../images/memories/dave-bike-ride.jpg"
             alt="Dave memory"
@@ -114,7 +114,7 @@ const MemoriesGallery: React.FC = () => {
             layout="fullWidth"
           />
         </PhotoFrame>
-        <PhotoFrame $index={3}>
+        <PhotoFrame style={{ animationDelay: "0.15s" }}>
           <StaticImage
             src="../images/memories/dave-dye-hair.jpg"
             alt="Dave memory"
@@ -122,7 +122,7 @@ const MemoriesGallery: React.FC = () => {
             layout="fullWidth"
           />
         </PhotoFrame>
-        <PhotoFrame $index={4}>
+        <PhotoFrame style={{ animationDelay: "0.2s" }}>
           <StaticImage
             src="../images/memories/dave-foster-city-kayaking.jpg"
             alt="Dave memory"
@@ -130,7 +130,7 @@ const MemoriesGallery: React.FC = () => {
             layout="fullWidth"
           />
         </PhotoFrame>
-        <PhotoFrame $index={5}>
+        <PhotoFrame style={{ animationDelay: "0.25s" }}>
           <StaticImage
             src="../images/memories/dave-iris-bday.jpg"
             alt="Dave memory"
@@ -138,7 +138,7 @@ const MemoriesGallery: React.FC = () => {
             layout="fullWidth"
           />
         </PhotoFrame>
-        <PhotoFrame $index={6}>
+        <PhotoFrame style={{ animationDelay: "0.3s" }}>
           <StaticImage
             src="../images/memories/dave-ivy-rooftop.jpeg"
             alt="Dave memory"
@@ -146,7 +146,7 @@ const MemoriesGallery: React.FC = () => {
             layout="fullWidth"
           />
         </PhotoFrame>
-        <PhotoFrame $index={7}>
+        <PhotoFrame style={{ animationDelay: "0.35s" }}>
           <StaticImage
             src="../images/memories/dave-lucid-motors.jpg"
             alt="Dave memory"
@@ -154,7 +154,7 @@ const MemoriesGallery: React.FC = () => {
             layout="fullWidth"
           />
         </PhotoFrame>
-        <PhotoFrame $index={8}>
+        <PhotoFrame style={{ animationDelay: "0.4s" }}>
           <StaticImage
             src="../images/memories/dave-lyf-group-d.JPG"
             alt="Dave memory"
@@ -162,7 +162,7 @@ const MemoriesGallery: React.FC = () => {
             layout="fullWidth"
           />
         </PhotoFrame>
-        <PhotoFrame $index={9}>
+        <PhotoFrame style={{ animationDelay: "0.45s" }}>
           <StaticImage
             src="../images/memories/dave-lyf-pizza.jpg"
             alt="Dave memory"
@@ -170,7 +170,7 @@ const MemoriesGallery: React.FC = () => {
             layout="fullWidth"
           />
         </PhotoFrame>
-        <PhotoFrame $index={10}>
+        <PhotoFrame style={{ animationDelay: "0.5s" }}>
           <StaticImage
             src="../images/memories/dave-lyf-stuffed-animals.jpg"
             alt="Dave memory"
@@ -178,7 +178,7 @@ const MemoriesGallery: React.FC = () => {
             layout="fullWidth"
           />
         </PhotoFrame>
-        <PhotoFrame $index={11}>
+        <PhotoFrame style={{ animationDelay: "0.55s" }}>
           <StaticImage
             src="../images/memories/dave-men-dinner.jpg"
             alt="Dave memory"
@@ -186,7 +186,7 @@ const MemoriesGallery: React.FC = () => {
             layout="fullWidth"
           />
         </PhotoFrame>
-        <PhotoFrame $index={12}>
+        <PhotoFrame style={{ animationDelay: "0.6s" }}>
           <StaticImage
             src="../images/memories/dave-meta-sf-office.jpg"
             alt="Dave memory"
@@ -194,7 +194,7 @@ const MemoriesGallery: React.FC = () => {
             layout="fullWidth"
           />
         </PhotoFrame>
-        <PhotoFrame $index={13}>
+        <PhotoFrame style={{ animationDelay: "0.65s" }}>
           <StaticImage
             src="../images/memories/dave-museum-face.jpg"
             alt="Dave memory"
@@ -202,7 +202,7 @@ const MemoriesGallery: React.FC = () => {
             layout="fullWidth"
           />
         </PhotoFrame>
-        <PhotoFrame $index={14}>
+        <PhotoFrame style={{ animationDelay: "0.7s" }}>
           <StaticImage
             src="../images/memories/dave-pizza-gary-bday.jpg"
             alt="Dave memory"
@@ -210,7 +210,7 @@ const MemoriesGallery: React.FC = () => {
             layout="fullWidth"
           />
         </PhotoFrame>
-        <PhotoFrame $index={15}>
+        <PhotoFrame style={{ animationDelay: "0.75s" }}>
           <StaticImage
             src="../images/memories/dave-renaissance-fair.jpg"
             alt="Dave memory"
@@ -218,7 +218,7 @@ const MemoriesGallery: React.FC = () => {
             layout="fullWidth"
           />
         </PhotoFrame>
-        <PhotoFrame $index={16}>
+        <PhotoFrame style={{ animationDelay: "0.8s" }}>
           <StaticImage
             src="../images/memories/dave-room-napping.jpg"
             alt="Dave memory"
@@ -226,7 +226,7 @@ const MemoriesGallery: React.FC = () => {
             layout="fullWidth"
           />
         </PhotoFrame>
-        <PhotoFrame $index={17}>
+        <PhotoFrame style={{ animationDelay: "0.85s" }}>
           <StaticImage
             src="../images/memories/dave-round-one-high-score.jpg"
             alt="Dave memory"
@@ -234,7 +234,7 @@ const MemoriesGallery: React.FC = () => {
             layout="fullWidth"
           />
         </PhotoFrame>
-        <PhotoFrame $index={18}>
+        <PhotoFrame style={{ animationDelay: "0.9s" }}>
           <StaticImage
             src="../images/memories/dave-round-one-octopus-hands.jpg"
             alt="Dave memory"
@@ -242,7 +242,7 @@ const MemoriesGallery: React.FC = () => {
             layout="fullWidth"
           />
         </PhotoFrame>
-        <PhotoFrame $index={19}>
+        <PhotoFrame style={{ animationDelay: "0.95s" }}>
           <StaticImage
             src="../images/memories/dave-sea-urchin.jpg"
             alt="Dave memory"
@@ -250,7 +250,7 @@ const MemoriesGallery: React.FC = () => {
             layout="fullWidth"
           />
         </PhotoFrame>
-        <PhotoFrame $index={20}>
+        <PhotoFrame style={{ animationDelay: "1s" }}>
           <StaticImage
             src="../images/memories/dave-the-kitchen.jpg"
             alt="Dave memory"
@@ -258,7 +258,7 @@ const MemoriesGallery: React.FC = () => {
             layout="fullWidth"
           />
         </PhotoFrame>
-        <PhotoFrame $index={21}>
+        <PhotoFrame style={{ animationDelay: "1.05s" }}>
           <StaticImage
             src="../images/memories/dave-volo-volleyball.jpg"
             alt="Dave memory"
@@ -266,7 +266,7 @@ const MemoriesGallery: React.FC = () => {
             layout="fullWidth"
           />
         </PhotoFrame>
-        <PhotoFrame $index={22}>
+        <PhotoFrame style={{ animationDelay: "1.1s" }}>
           <StaticImage
             src="../images/memories/dave-white-rabbit.jpg"
             alt="Dave memory"
