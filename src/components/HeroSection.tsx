@@ -97,6 +97,7 @@ const RainbowName = styled.span`
   -webkit-text-fill-color: transparent;
   animation: ${rainbowBg} 3s ease infinite;
   font-weight: 900;
+  text-shadow: none;
 `;
 
 const Subtitle = styled.p`
@@ -130,19 +131,15 @@ const HeroSection: React.FC = () => {
       <Title>
         GOODBYE
         <br />
-        <RainbowName>DAVID HSU</RainbowName>
+        <RainbowName>DAVE</RainbowName>
       </Title>
 
       <Subtitle>SF will never be the same without you 😭</Subtitle>
 
       <DramaticText>
-        <p>
-          A city weeps. The fog rolls in heavier now. The burritos taste less
-          burrito-y.
-        </p>
-        <p style={{ marginTop: "10px" }}>
-          You have left a void that no amount of sourdough can fill.
-        </p>
+        <p>End of an era</p>
+        <p>But four years is not enough</p>
+        <p>To be continued (?)</p>
       </DramaticText>
 
       <ScrollIndicator>⬇️ Scroll to cry more ⬇️</ScrollIndicator>

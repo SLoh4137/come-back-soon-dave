@@ -20,7 +20,7 @@ const IndexPage: React.FC<PageProps> = () => {
       <FakeMusicPlayer />
 
       <MarqueeText
-        text="🚨 BREAKING NEWS: DAVID HSU HAS LEFT SAN FRANCISCO. THIS IS NOT A DRILL. 🚨 REPEAT: DAVE IS GONE. 🚨 SF OFFICIALLY IN MOURNING. 🚨 PLEASE SEND HELP. 🚨"
+        text="🚨 BREAKING NEWS: DAVID HSU IS LEAVING THE BAY. THIS IS NOT A DRILL. 🚨 REPEAT: DAVE IS LEAVING. 🚨 PLEASE SEND HELP. 🚨"
         speed={20}
       />
 
