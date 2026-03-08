@@ -87,8 +87,9 @@ const SlidesButton = styled.a`
   display: inline-block;
   margin-top: 40px;
   padding: 20px 48px;
+  white-space: nowrap;
   font-family: "Comic Sans MS", "Comic Sans", "Comic Neue", cursive;
-  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  font-size: clamp(1rem, 3vw, 1.8rem);
   font-weight: bold;
   color: #fff;
   text-decoration: none;
@@ -149,7 +150,13 @@ const FinalPlea: React.FC = () => {
         🎬 See More SF Memories 🎬
       </SlidesButton>
       <Footer>
-        <p style={{ marginTop: "15px", fontSize: "2rem" }}>
+        <p
+          style={{
+            marginTop: "15px",
+            fontSize: "clamp(1.2rem, 4vw, 2rem)",
+            padding: "0 10px",
+          }}
+        >
           🌉 → ✈️ → 🏠 → 🔙 → 🌉
         </p>
       </Footer>
