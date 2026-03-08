@@ -1,4 +1,5 @@
 import * as React from "react";
+import Sparkles from "./Sparkles";
 import styled, { keyframes } from "styled-components";
 import { StaticImage } from "gatsby-plugin-image";
 
@@ -145,7 +146,9 @@ const HeroSection: React.FC = () => {
       <Title>
         GOODBYE
         <br />
-        <RainbowName>DAVE</RainbowName>
+        <Sparkles>
+          <RainbowName>DAVE</RainbowName>
+        </Sparkles>
       </Title>
 
       <Subtitle>You better come back soon</Subtitle>

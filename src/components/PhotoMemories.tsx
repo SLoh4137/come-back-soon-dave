@@ -1,6 +1,7 @@
 import * as React from "react";
 import styled, { keyframes } from "styled-components";
 import { StaticImage } from "gatsby-plugin-image";
+import Sparkles from "./Sparkles";
 
 const float = keyframes`
   0%, 100% { transform: translateY(0px) rotate(0deg); }
@@ -20,11 +21,16 @@ const Section = styled.section`
   z-index: 2;
 `;
 
+const SparklesWrapper = styled.div`
+  text-align: center;
+  margin-bottom: 10px;
+`;
+
 const Heading = styled.h2`
   text-align: center;
   font-family: "Comic Sans MS", "Comic Sans", "Comic Neue", cursive;
   font-size: clamp(1.5rem, 4vw, 2.5rem);
-  margin-bottom: 10px;
+  margin-bottom: 0;
   background: linear-gradient(90deg, #ffd700, #ff69b4, #ffd700);
   background-size: 200% 100%;
   -webkit-background-clip: text;
@@ -89,7 +95,12 @@ const CaptionDetail = styled.p`
 const PhotoMemories: React.FC = () => {
   return (
     <Section>
-      <Heading>📸 Dave's First Days in the Bay 📸</Heading>
+      <SparklesWrapper>
+        <Sparkles>
+          <Heading>📸 Dave's First Days in the Bay 📸</Heading>
+        </Sparkles>
+      </SparklesWrapper>
+
       <SubHeading>
         Living on Page Street
         <br />

@@ -68,5 +68,20 @@ export const Head: HeadFC = () => (
       name="description"
       content="An extremely emotional and totally professional farewell page for David Hsu leaving SF"
     />
+    <meta property="og:title" content="Come Back Soon, Dave! 😭🌉" />
+    <meta
+      property="og:description"
+      content="An extremely emotional and totally professional farewell page for David Hsu leaving SF"
+    />
+    <meta property="og:image" content="https://www.comebacksoondavebaylife.com/dave-preview-image.jpg" />
+    <meta property="og:url" content="https://www.comebacksoondavebaylife.com" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Come Back Soon, Dave! 😭🌉" />
+    <meta
+      name="twitter:description"
+      content="An extremely emotional and totally professional farewell page for David Hsu leaving SF"
+    />
+    <meta name="twitter:image" content="https://www.comebacksoondavebaylife.com/dave-preview-image.jpg" />
   </>
 );

@@ -1,5 +1,6 @@
 import * as React from "react";
 import styled, { keyframes } from "styled-components";
+import Sparkles from "./Sparkles";
 
 const pulse = keyframes`
   0%, 100% { transform: scale(1); }
@@ -133,7 +134,9 @@ const FinalPlea: React.FC = () => {
   return (
     <Section>
       <Heading>Come Back Soon, Dave</Heading>
-      <HeartEmoji>🫶</HeartEmoji>
+      <Sparkles>
+        <HeartEmoji>🫶</HeartEmoji>
+      </Sparkles>
       <Message>
         From August 2022 to March 2026, we've made so many memories together
         here in the Bay. Whether it's LYF, random bike rides, or getting high

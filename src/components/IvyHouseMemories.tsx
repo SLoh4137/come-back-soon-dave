@@ -1,6 +1,7 @@
 import * as React from "react";
 import styled, { keyframes } from "styled-components";
 import { StaticImage } from "gatsby-plugin-image";
+import Sparkles from "./Sparkles";
 
 const float = keyframes`
   0%, 100% { transform: translateY(0px) rotate(0deg); }
@@ -20,11 +21,16 @@ const Section = styled.section`
   z-index: 2;
 `;
 
+const SparklesWrapper = styled.div`
+  text-align: center;
+  margin-bottom: 10px;
+`;
+
 const Heading = styled.h2`
   text-align: center;
   font-family: "Comic Sans MS", "Comic Sans", "Comic Neue", cursive;
   font-size: clamp(1.5rem, 4vw, 2.5rem);
-  margin-bottom: 10px;
+  margin-bottom: 0;
   background: linear-gradient(90deg, #00ffcc, #7b68ee, #00ffcc);
   background-size: 200% 100%;
   -webkit-background-clip: text;
@@ -89,7 +95,11 @@ const CaptionDetail = styled.p`
 const IvyHouseMemories: React.FC = () => {
   return (
     <Section>
-      <Heading>🏠 Moving to Ivy 🏠</Heading>
+      <SparklesWrapper>
+        <Sparkles>
+          <Heading>🏠 Moving to Ivy 🏠</Heading>
+        </Sparkles>
+      </SparklesWrapper>
       <SubHeading>
         A chance encounter <br />
         The best possible townhouse <br />

@@ -1,6 +1,7 @@
 import * as React from "react";
 import styled, { keyframes } from "styled-components";
 import { StaticImage } from "gatsby-plugin-image";
+import Sparkles from "./Sparkles";
 
 const shimmer = keyframes`
   0% { background-position: -200% 0; }
@@ -20,11 +21,16 @@ const Section = styled.section`
   z-index: 2;
 `;
 
+const SparklesWrapper = styled.div`
+  text-align: center;
+  margin-bottom: 10px;
+`;
+
 const Heading = styled.h2`
   text-align: center;
   font-family: "Comic Sans MS", "Comic Sans", "Comic Neue", cursive;
   font-size: clamp(1.5rem, 4vw, 2.5rem);
-  margin-bottom: 10px;
+  margin-bottom: 0;
   background: linear-gradient(90deg, #ff6b6b, #feca57, #48dbfb, #ff6b6b);
   background-size: 200% 100%;
   -webkit-background-clip: text;
@@ -105,7 +111,11 @@ const MemoriesGallery: React.FC = () => {
 
   return (
     <Section ref={sectionRef}>
-      <Heading>🎞️ Random Memories 🎞️</Heading>
+      <SparklesWrapper>
+        <Sparkles>
+          <Heading>🎞️ Random Memories 🎞️</Heading>
+        </Sparkles>
+      </SparklesWrapper>
       <SubHeading>
         Many memories
         <br />
