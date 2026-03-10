@@ -94,7 +94,7 @@ const SufferingText = styled.p`
 
 const CountUpTimer: React.FC = () => {
   const [now, setNow] = React.useState<Date | null>(null);
-  const departureDate = new Date("2026-03-18T19:00:00");
+  const departureDate = new Date("2026-03-18T16:55:00");
 
   React.useEffect(() => {
     setNow(new Date());
